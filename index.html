@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character set and viewport for better compatibility -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to Boxicons library for icon usage -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Link to the main stylesheet for the application -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Set the title of the HTML document -->
+    <title>speechXT</title>
+</head>
+<body>
+
+    <!-- Main container for the Speech-to-Text application -->
+    <div class="container">
+        <!-- Header section for the application title -->
+        <p class="header">Speech To Text <br> <span>Converter</span></p>
+        
+        <!-- Settings section, including language selection -->
+        <div class="settings">
+            <div class="language">
+                <p>Language :</p>
+                <!-- Dropdown menu for language selection -->
+                <select id="language"></select>
+            </div>
+        </div>
+        
+        <!-- Separator line for visual distinction -->
+        <div class="separator"></div>
+        
+        <!-- Button for starting the recording process -->
+        <button class="btn record">
+            <!-- Icon and loader for the recording button -->
+            <div class="icon">
+                <i class='bx bxs-microphone-alt'></i>
+                <i class='bx bx-loader-circle'></i>
+            </div>
+            <!-- Text associated with the recording button -->
+            <p>Start Recording</p>
+        </button>
+
+        <!-- Display the result label -->
+        <p id="result">Result :</p>
+        
+        <!-- Container for displaying the result of the speech-to-text conversion -->
+        <div class="result" spellcheck="false">
+            <!-- Placeholder for the result text -->
+            <p class="resultText"></p>
+        </div>
+
+        <!-- Separator line for visual distinction -->
+        <div class="separator"></div>
+
+        <!-- Buttons section for additional actions -->
+        <div class="buttons">
+            <!-- Button to clear the recorded text -->
+            <button class="btn clear">Clear</button>
+            
+            <!-- Button to download the recorded text (initially disabled) -->
+            <button class="btn download" disabled>Download</button>
+        </div>
+    </div>
+
+    <!-- Include JavaScript files for language handling and main functionality -->
+    <script src="assets/js/languages.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* Importing Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Resetting default styles for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Define CSS custom properties (variables) for color and styling */
+:root {
+    /* colors */
+    --body-background-color: hsl(204, 72%, 74%);
+    --container-background: hsl(0, 0%, 100%);
+    --header-span: hsl(232, 78%, 45%);
+    --container-text: hsl(0, 0%, 65%);
+    --border-color: hsl(0, 0%, 0%);
+    --seperator-color: hsl(0, 0%, 20%);
+    --button-background: hsl(232, 54%, 41%);
+    --button-background-alt:hsl(232, 78%, 45%);
+    --disabled-button: hsl(0, 0%, 64%);
+    --text-color: hsl(120, 4%, 5%);
+
+    /* font-weight */
+    --light: 300;
+    --normal: 500;
+    --heavy: 700;
+
+    /* font-size */
+    --text-font-small: 12px;
+    --text-font-small-2: 14px;
+    --text-font-medium: 16px;
+    --text-font-large: 22px;
+    --text-font-large-2: 24px;
+    --text-font-large-3: 30px;
+}
+
+/* Styling for the body element */
+body {
+    height: 100lvh; /* Typo: Should be '100vh' for 100% viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--body-background-color);
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+/* Styling for the container element */
+.container {
+    width: 450px;
+    background: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+/* Styling for the header inside the container */
+.container .header {
+    font-size: var(--text-font-large);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* Styling for the span inside the header */
+.container .header span {
+    color: var(--header-span);
+    font-size: var(--text-font-large-3);
+}
+
+/* Styling for settings paragraphs inside the container */
+.container .settings p {
+    font-size: var(--text-font-small-2);
+    font-weight: var(--normal);
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+/* Styling for select elements inside the container settings */
+.container .settings select {
+    width: 100%;
+    padding: 6px 10px;
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+}
+
+/* Styling for the separator line inside the container */
+.container .separator {
+    width: 100%;
+    height: 1px;
+    background: var(--seperator-color);
+    opacity: 0.5;
+    margin: 20px 0;
+}
+
+/* Styling for the result element */
+#result {
+    font-size: var(--text-font-small-2);
+    font-weight: var(--normal);
+}
+
+/* Styling for the language dropdown container */
+.language {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.language p {
+    text-align: left;
+}
+
+/* Styling for the language dropdown */
+#language {
+    height: 50px;
+    padding: 10px;
+    font-size: var(--text-font-medium);
+    border: 3px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+    transition: border-color 0.3s ease-in-out;
+    appearance: none;
+    width: 70%;
+}
+
+#language:focus {
+    border: 3px solid var(--border-color);
+}
+
+/* Styling for the generic button */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 20px;
+    height: 42px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--text-font-small-2);
+    cursor: pointer;
+    color: var(--container-background);
+    background: var(--button-background);
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    background: var(--button-background-alt);
+}
+
+/* Styling for the icon inside the button */
+.btn i {
+    font-size: var(--text-font-large-2);
+}
+
+/* Styling for the disabled state of the button */
+.btn:disabled {
+    background: var(--disabled-button);
+    cursor: not-allowed;
+}
+
+/* Styling for the loader circle in the record section */
+.container .record .bx-loader-circle {
+    display: none;
+}
+
+/* Styling for the loader circle when recording */
+.container .record.recording .bx-loader-circle {
+    display: block;
+}
+
+/* Styling for the icon when recording */
+.container .record.recording i {
+    display: none;
+}
+
+/* Styling for the result container */
+.container .result {
+    width: 100%;
+    border: 3px solid var(--border-color);
+    height: 120px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: var(--text-font-small);
+    margin: 10px 0 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Styling for the result paragraph */
+.container .result p {
+    display: inline;
+    margin-left: 3px;
+    color: var(--text-color);
+}
+
+/* Styling for the buttons container */
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Hover effect for specific buttons in the buttons container */
+.buttons .btn.clear:hover, .btn.download:hover {
+    background: var(--button-background-alt);
+}
+
+/* Styling for the disabled state of the download button */
+.buttons .btn.download:disabled {
+    background: var(--disabled-button);
+}
+
+/* Additional styling for buttons in the buttons container */
+.buttons .btn {
+    margin-bottom: 10px;
+}
